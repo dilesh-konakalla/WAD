@@ -24,7 +24,8 @@ const styles = {
       padding: '15px',
     },
     doughnutContainer: {
-      maxWidth: '400px', // Set a maximum width for the Doughnut chart container
+      width: '400px',
+      height: '400px', // Set a maximum width for the Doughnut chart container
       margin: '0 auto', // Center the chart within its container
     },
     footer: {
@@ -147,10 +148,12 @@ const WebAnalyticsDashboard = () => {
           </div>
 
           {/* Page Views Over Time Card */}
-          <div style={styles.card}>
+        <div >
+        <div style={styles.card}>
             <h3>Page Views Over Time</h3>
             {data.page_views_over_time ? (
-              <Line
+              <div style={{ height :'300px'}}>
+                <Line
                 data={{
                   labels: Object.keys(data.page_views_over_time),
                   datasets: [
@@ -164,10 +167,12 @@ const WebAnalyticsDashboard = () => {
                 }}
                 options={{ maintainAspectRatio: false }}
               />
+              </div>
             ) : (
               <div>Data is not available or structured incorrectly for Line Chart.</div>
             )}
           </div>
+        </div>
         </>
       ) : (
         <div>Loading...</div>
