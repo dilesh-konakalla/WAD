@@ -1,0 +1,30 @@
+{
+    "traffic_sources": {
+      "Organic Search": 300,
+      "Direct": 150,
+      "Referral": 100,
+      "Social Media": 50
+    },
+    "popular_browsers": {
+      "Chrome": 500,
+      "Firefox": 200,
+      "Safari": 150,
+      "Edge": 100,
+      "Opera": 50
+    },
+    "geo_location": {
+      "United States": 400,
+      "India": 300,
+      "United Kingdom": 200,
+      "Canada": 100,
+      "Australia": 50
+    },
+    "page_views_over_time": {
+      "2024-01-01": 200,
+      "2024-01-02": 300,
+      "2024-01-03": 500,
+      "2024-01-04": 350,
+      "2024-01-05": 450
+    }
+  }
+  

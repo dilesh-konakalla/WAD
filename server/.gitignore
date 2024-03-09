@@ -1,0 +1,25 @@
+# Ignore system and IDE files
+.vscode/
+.idea/
+
+# Ignore server-specific files and directories
+node_modules/
+*.log
+*.pid
+*.lock
+
+# Ignore configuration files that may contain sensitive information
+config.js
+.env
+
+# Ignore build and compiled files
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore package manager files
+package-lock.json
+yarn.lock
