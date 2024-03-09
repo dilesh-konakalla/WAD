@@ -49,7 +49,7 @@ const WebAnalyticsDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/data'); // Update the URL with your server's address
+      const response = await fetch('https://wad-server-xev2.onrender.com/data'); // Update the URL with your server's address
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
