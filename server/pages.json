@@ -1,0 +1,11 @@
+[
+    { "name": "/:dashboard", "visitors": 184132 },
+    { "name": "/sites", "visitors": 97495 },
+    { "name": "/", "visitors": 49389 },
+    { "name": "/login", "visitors": 22084 },
+    { "name": "/share/:dashboard", "visitors": 8833 },
+    { "name": "/settings", "visitors": 7923 },
+    { "name": "/cookbookdk", "visitors": 6716 },
+    { "name": "/register", "visitors": 5521 }
+  ]
+  
