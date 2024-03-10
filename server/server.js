@@ -11,6 +11,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/data', (req, res) => {
   res.sendFile(path.join(__dirname, 'data.json'));
 });
+app.get('/web', (req, res) => {
+  res.sendFile(path.join(__dirname, 'websites.json'));
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
