@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css'; // Import your custom CSS file for styling
+import { NavLink } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
   const [analyticsData, setAnalyticsData] = useState([]);
-  
 
   useEffect(() => {
-    const fetchData = async (url, setData) => {
+    const fetchData = async () => {
+      const url = 'https://wad-server-xev2.onrender.com/web';
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setData(data);
+        setAnalyticsData(data);
       } catch (error) {
-        console.error(`Error fetching data from ${url}:`, error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchData('https://wad-server-xev2.onrender.com/web', setAnalyticsData);
+    fetchData();
   }, []);
 
-  // Extract names and visitors from pagesData for the line chart
-
-
-  
-
   return (
-    <div className="home-container">
-      <div className="card-container">
-        <div className="card">
+    <main className="home-container">
+      <header>
+        <h1>Welcome to Your Analytics Dashboard</h1>
+        <p>Gain valuable insights into your website's performance and user engagement with our analytics dashboard.</p>
+      </header>
+
+      <section className="analytics-overview">
+        <article className="card">
           <h2>Top Referrers</h2>
           <div className="scrollable-table">
             <table>
@@ -43,9 +43,7 @@ const Home = () => {
               <tbody>
                 {analyticsData.map((referrer, index) => (
                   <tr key={index}>
-                    <td>
-                      <Link to="/visualization">{referrer.name}</Link>
-                    </td>
+                    <td><NavLink to="/visualization">{referrer.name}</NavLink></td>
                     <td>{referrer.visit_duration}</td>
                     <td>{referrer.visitors}</td>
                     <td>{referrer.bounce_rate}</td>
@@ -54,11 +52,16 @@ const Home = () => {
               </tbody>
             </table>
           </div>
+        </article>
+      </section>
 
-          </div>
-          </div>
-          </div>
+      <aside className="info-section">
+        <h2>How It Works</h2>
+        <p>Our analytics dashboard provides comprehensive information about your website's performance. Monitor top referrers, visit duration, visitors, and bounce rates to make informed decisions and optimize your online presence.</p>
+        <p>Explore the details, track trends, and enhance your website's user experience.</p>
+      </aside>
 
+    </main>
   );
 };
 

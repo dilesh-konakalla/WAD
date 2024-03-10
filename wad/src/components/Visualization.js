@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'chart.js/auto';
 import { Pie, Bar, Doughnut, Line } from 'react-chartjs-2';
-
+import Footer from './Footer';
 const styles = {
   container: {
     textAlign: 'center',
@@ -27,7 +27,15 @@ const styles = {
   link: {
     color: '#FFCE56',
   },
+  footer: {
+    marginTop: '30px', // Adjust the top margin to create space between content and footer
+    padding: '10px',
+    backgroundColor: '#333',
+    color: '#fff',
+  },
 };
+
+
 
 const WebAnalyticsDashboard = () => {
   const [data, setData] = useState(null);
@@ -47,6 +55,7 @@ const WebAnalyticsDashboard = () => {
   };
 
   return (
+    <div>
     <div style={styles.container}>
       {data ? ( // Check if data is not null before accessing its properties
         <>
@@ -154,6 +163,10 @@ const WebAnalyticsDashboard = () => {
       ) : (
         <div>Loading...</div>
       )}
+      
+    </div>
+    
+    {/* <Footer  style={styles.footer} /> */}
     </div>
   );
 };

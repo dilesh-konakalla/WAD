@@ -7,14 +7,15 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div>
-      <Header />
+  
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/visualization" element={<Visualization />} />
         </Routes>
       </Router>
-      <Footer />
+      
+ 
     </div>
   );
 }
