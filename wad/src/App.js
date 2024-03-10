@@ -1,11 +1,18 @@
 import React from 'react';
-import Visualization from './components/Visualization.js';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Visualization from './components/Visualization';
+import Header from './components/Header';
 function App() {
   return (
-    <div className="App">
-      <h1>React Analytics Dashboard</h1>
-      <Visualization />
+    <div>
+      {/* <Header /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/visualization" element={<Visualization />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
