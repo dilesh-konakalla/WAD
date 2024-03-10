@@ -21,30 +21,35 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h2>Top Referrers</h2>
-      <div className="scrollable-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Visit Duration</th>
-              <th>Visitors</th>
-              <th>Bounce Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            {analyticsData.map((referrer, index) => (
-              <tr key={index}>
-                <td>
-                  <Link to="/visualization">{referrer.name}</Link>
-                </td>
-                <td>{referrer.visit_duration}</td>
-                <td>{referrer.visitors}</td>
-                <td>{referrer.bounce_rate}</td>
+      <div className="card-container">
+      
+        <div className="card">
+        <h2>Top Referrers</h2>
+        <div className="scrollable-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Visit Duration</th>
+                <th>Visitors</th>
+                <th>Bounce Rate</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {analyticsData.map((referrer, index) => (
+                <tr key={index}>
+                  <td>
+                    <Link to="/visualization">{referrer.name}</Link>
+                  </td>
+                  <td>{referrer.visit_duration}</td>
+                  <td>{referrer.visitors}</td>
+                  <td>{referrer.bounce_rate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+          </div>
       </div>
     </div>
   );

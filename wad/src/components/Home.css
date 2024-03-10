@@ -2,9 +2,18 @@
     padding: 20px;
   }
   
-  .scrollable-table {
-    max-height: 800px;
-    overflow-y: auto;
+  .card-container {
+    display: flex;
+    justify-content: flex-start; /* Updated to move to the top-left corner */
+  }
+  
+  .card {
+    width: 500px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   table {
@@ -13,7 +22,8 @@
     margin-top: 10px;
   }
   
-  th, td {
+  th,
+  td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
@@ -30,5 +40,11 @@
   
   a:hover {
     text-decoration: underline;
+  }
+  
+  .scrollable-table {
+    max-height: 400px;
+    width: 100%; /* Updated to fill the width of the card */
+    overflow-y: auto;
   }
   
