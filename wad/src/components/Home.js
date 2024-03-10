@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import './Home.css'; // Import your custom CSS file for styling
 
 const Home = () => {
   const [analyticsData, setAnalyticsData] = useState([]);
-  const [pagesData, setPagesData] = useState([]);
+  
 
   useEffect(() => {
     const fetchData = async (url, setData) => {
@@ -19,24 +18,12 @@ const Home = () => {
     };
 
     fetchData('https://wad-server-xev2.onrender.com/web', setAnalyticsData);
-    fetchData('https://wad-server-xev2.onrender.com/pages', setPagesData);
   }, []);
 
   // Extract names and visitors from pagesData for the line chart
-  const pageNames = pagesData.map((page) => page.name);
-  const pageVisitors = pagesData.map((page) => page.visitors);
 
-  const lineChartData = {
-    labels: pageNames,
-    datasets: [
-      {
-        label: 'Visitors',
-        data: pageVisitors,
-        fill: false,
-        borderColor: 'rgba(75,192,192,1)',
-      },
-    ],
-  };
+
+  
 
   return (
     <div className="home-container">
@@ -68,16 +55,10 @@ const Home = () => {
             </table>
           </div>
 
-        </div>
-
-        <div className="card">
-          <h2>Page Statistics</h2>
-          <div className="line-chart">
-            <Line data={lineChartData} />
           </div>
-        </div>
-      </div>
-    </div>
+          </div>
+          </div>
+
   );
 };
 

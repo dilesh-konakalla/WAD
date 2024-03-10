@@ -3,43 +3,31 @@ import 'chart.js/auto';
 import { Pie, Bar, Doughnut, Line } from 'react-chartjs-2';
 
 const styles = {
-    container: {
-      textAlign: 'center',
-      margin: 'auto',
-      width: '80%',
-      backgroundColor: '#fff',
-      padding: '20px',
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-      borderRadius: '8px',
-      marginBottom: '30px',
-    },
-    heading: {
-      color: '#333',
-      marginBottom: '15px',
-    },
-    card: {
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-      borderRadius: '8px',
-      marginBottom: '20px',
-      padding: '15px',
-    },
-    doughnutContainer: {
-      width: '400px',
-      height: '400px', // Set a maximum width for the Doughnut chart container
-      margin: '0 auto', // Center the chart within its container
-    },
-    footer: {
-      marginTop: '30px',
-      padding: '10px',
-      backgroundColor: '#333',
-      color: '#fff',
-    },
-    link: {
-      color: '#FFCE56',
-    },
-  };
-  
-
+  container: {
+    textAlign: 'center',
+    margin: 'auto',
+    width: '80%',
+    backgroundColor: '#fff',
+    padding: '20px',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    marginBottom: '30px',
+  },
+  card: {
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    marginBottom: '20px',
+    padding: '15px',
+  },
+  doughnutContainer: {
+    width: '400px',
+    height: '400px', // Set a maximum width for the Doughnut chart container
+    margin: '0 auto', // Center the chart within its container
+  },
+  link: {
+    color: '#FFCE56',
+  },
+};
 
 const WebAnalyticsDashboard = () => {
   const [data, setData] = useState(null);
@@ -60,19 +48,8 @@ const WebAnalyticsDashboard = () => {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.heading}>Web Analytics Dashboard</h2>
-
       {data ? ( // Check if data is not null before accessing its properties
         <>
-          {/* About Us Card */}
-          <div style={{ ...styles.card, textAlign: 'left' }}>
-            <h3>About Us</h3>
-            <p>
-              Welcome to our Web Analytics Dashboard! We provide insightful data visualizations to help you understand
-              and analyze your website's performance.
-            </p>
-          </div>
-
           {/* Traffic Overview Card */}
           <div style={styles.card}>
             <h3>Traffic Overview</h3>
@@ -148,52 +125,35 @@ const WebAnalyticsDashboard = () => {
           </div>
 
           {/* Page Views Over Time Card */}
-        <div >
-        <div style={styles.card}>
-            <h3>Page Views Over Time</h3>
-            {data.page_views_over_time ? (
-              <div style={{ height :'300px'}}>
-                <Line
-                data={{
-                  labels: Object.keys(data.page_views_over_time),
-                  datasets: [
-                    {
-                      label: 'Page Views',
-                      data: Object.values(data.page_views_over_time),
-                      borderColor: '#FFCE56',
-                      backgroundColor: 'rgba(255,206,86,0.2)',
-                    },
-                  ],
-                }}
-                options={{ maintainAspectRatio: false }}
-              />
-              </div>
-            ) : (
-              <div>Data is not available or structured incorrectly for Line Chart.</div>
-            )}
+          <div>
+            <div style={styles.card}>
+              <h3>Page Views Over Time</h3>
+              {data.page_views_over_time ? (
+                <div style={{ height: '300px' }}>
+                  <Line
+                    data={{
+                      labels: Object.keys(data.page_views_over_time),
+                      datasets: [
+                        {
+                          label: 'Page Views',
+                          data: Object.values(data.page_views_over_time),
+                          borderColor: '#FFCE56',
+                          backgroundColor: 'rgba(255,206,86,0.2)',
+                        },
+                      ],
+                    }}
+                    options={{ maintainAspectRatio: false }}
+                  />
+                </div>
+              ) : (
+                <div>Data is not available or structured incorrectly for Line Chart.</div>
+              )}
+            </div>
           </div>
-        </div>
         </>
       ) : (
         <div>Loading...</div>
       )}
-
-      {/* Contact Us Card */}
-      <div style={{ ...styles.card, textAlign: 'left' }}>
-        <h3>Contact Us</h3>
-        <p>
-          Have questions or need assistance? Feel free to contact our support team at{' '}
-          <a href="mailto:support@webanalytics.com" style={styles.link}>
-            support@webanalytics.com
-          </a>
-        </p>
-      </div>
-
-      {/* Additional content: Footer */}
-      <footer style={styles.footer}>
-        <p>Data provided by <a href="https://your-data-source.com" style={styles.link}>Your Data Source</a></p>
-        <p>Charts powered by <a href="https://www.chartjs.org" style={styles.link}>Chart.js</a></p>
-      </footer>
     </div>
   );
 };

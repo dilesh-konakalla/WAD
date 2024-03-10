@@ -1,5 +1,4 @@
 [
-  {"name":"Direct / None","visit_duration":320,"visitors":235000,"bounce_rate":45},
   {"name":"Google","visit_duration":180,"visitors":22000,"bounce_rate":50},
   {"name":"GitHub","visit_duration":200,"visitors":2100,"bounce_rate":55},
   {"name":"DuckDuckGo","visit_duration":210,"visitors":1200,"bounce_rate":45},
