@@ -19,6 +19,10 @@ app.get('/pages', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages.json'));
 });
 
+app.get('/countries', (req, res) => {
+  res.sendFile(path.join(__dirname, 'countries.json'));
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
