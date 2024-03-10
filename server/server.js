@@ -15,7 +15,7 @@ app.get('/web', (req, res) => {
   res.sendFile(path.join(__dirname, 'websites.json'));
 });
 
-app.get('/web', (req, res) => {
+app.get('/pages', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages.json'));
 });
 
